@@ -1,0 +1,47 @@
+.heart {
+    position: fixed; 
+    top: 40%; 
+    left: 45%; 
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+
+        /* Heart shape */
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 52px;
+            height: 80px;
+            border-radius: 50px 50px 0 0;
+            background: red;
+        }
+
+        /* Left side of the heart */
+        .heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        /* Right side of the heart */
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        /* Heartbeat animation keyframes */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
